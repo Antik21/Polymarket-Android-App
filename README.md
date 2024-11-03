@@ -33,7 +33,7 @@ This is the Android application for [Polymarket](https://polymarket.com/), a pla
    API_PASSPHRASE="YOUR_POLYMARKET_PASSPHRASE"
    PRIVATE_KEY="YOUR_METAMASK_PRIVATE_KEY"
 
-2. **SDownload the EIP712 Library** 
+2. **Download the EIP712 Library** 
    Clone the EIP712 library source code from the eip712 [GitHub repository](https://github.com/Antik21/eip712) and add it to the project directory.
 
 ## Join the Team
