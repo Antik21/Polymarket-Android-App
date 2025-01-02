@@ -16,3 +16,4 @@ local.properties
 gradle.properties
 .idea/
 /gamma/build
+.kotlin/
