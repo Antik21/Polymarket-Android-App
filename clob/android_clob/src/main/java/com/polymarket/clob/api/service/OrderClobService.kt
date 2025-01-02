@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.polymarket.clob.AssetType
 import com.polymarket.clob.BookParams
 import com.polymarket.clob.OrderBookSummary
+import com.polymarket.clob.OrdersScoringParams
 import com.polymarket.clob.api.response.BalanceAllowancesResponse
 import com.skydoves.sandwich.ApiResponse
 import retrofit2.Response
@@ -31,10 +32,10 @@ internal interface OrderClobService {
         @Query("signature_type") signatureType: Long = -1
     ): ApiResponse<Unit>
 
-    @POST("post_order")
-    suspend fun postOrder(
-        @Body orderData: Map<String, Any>
-    ): Response<Map<String, Any>>
+    @POST("/orders-scoring")
+    suspend fun ordersScoring(
+        @Body params: OrdersScoringParams
+    ): ApiResponse<String>
 
     @DELETE("cancel")
     suspend fun cancel(

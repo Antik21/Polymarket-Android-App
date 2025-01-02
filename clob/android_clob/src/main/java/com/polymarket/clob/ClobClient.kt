@@ -66,6 +66,12 @@ class ClobClient(context: Context, baseUrl: String, signer: EthSigner, keyStorag
         }
     }
 
+    suspend fun areOrdersScoring(params: OrdersScoringParams): ApiResponse<String> {
+        return withContext(Dispatchers.IO) {
+            services.order.ordersScoring(params)
+        }
+    }
+
     /*suspend fun updateBalanceAllowance(signatureType: Int): Boolean {
         return withContext(Dispatchers.IO) {
             service.updateBalanceAllowance(signatureType).isSuccessful

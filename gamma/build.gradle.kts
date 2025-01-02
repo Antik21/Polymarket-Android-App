@@ -4,23 +4,17 @@ plugins {
 }
 
 android {
-    namespace = "com.polymarket.clob"
+    namespace = "com.polymarket.gamma"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 31
 
-        testApplicationId = "com.polymarket.android_clob.test"
-        testInstrumentationRunner = "com.polymarket.clob.AppTestRunner"
+        testApplicationId = "com.polymarket.gamma.test"
+        testInstrumentationRunner = "com.polymarket.gamma.AppTestRunner"
+
         consumerProguardFiles("consumer-rules.pro")
-
-        buildConfigField("String", "API_KEY", "${project.findProperty("API_KEY")}")
-        buildConfigField("String", "API_SECRET", "${project.findProperty("API_SECRET")}")
-        buildConfigField("String", "API_PASSPHRASE", "${project.findProperty("API_PASSPHRASE")}")
-        buildConfigField("String", "PRIVATE_KEY", "${project.findProperty("PRIVATE_KEY")}")
     }
-
-    android.buildFeatures.buildConfig = true
 
     buildTypes {
         release {
@@ -28,14 +22,13 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     kotlin {
         jvmToolchain(17)
     }
 }
 
 dependencies {
-    implementation(project(":eip712"))
-    implementation(project(":clob:clob_order_utils"))
     implementation(libs.gson)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter)
@@ -46,9 +39,9 @@ dependencies {
     releaseImplementation(libs.chucker)
     debugImplementation(libs.chucker.debug)
 
-    implementation(libs.androidx.core.ktx)
     implementation(libs.web3j.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }
