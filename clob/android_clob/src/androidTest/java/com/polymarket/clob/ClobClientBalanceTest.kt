@@ -1,13 +1,6 @@
 package com.polymarket.clob
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
-import com.antik.eip712.signer.PrivateKeyEthSigner
-import com.google.gson.Gson
-import com.polymarket.clob.Constants.HOST
-import com.polymarket.clob.Constants.POLYGON
-import com.polymarket.clob.api.ApiKeyStorage
-import com.polymarket.clob.signing.getClobAuthDomain
 import com.skydoves.sandwich.getOrNull
 import com.skydoves.sandwich.isSuccess
 import com.skydoves.sandwich.messageOrNull
